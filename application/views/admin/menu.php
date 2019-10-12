@@ -10,7 +10,7 @@
 		    <a class="nav-link" href="#">Kelola Donasi</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" href="#">Kelola Agenda</a>
+		    <a class="nav-link" href="<?php echo base_url('admin/agenda')?>">Kelola Agenda</a>
 		  </li>
 		  <li class="nav-item">
 		    <a class="nav-link" href="#">Kelola Laporan</a>
