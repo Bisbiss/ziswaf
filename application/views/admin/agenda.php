@@ -41,8 +41,8 @@
                                         <a href="<?php echo base_url('assets/agenda/'.$data->foto) ?>">Lihat file </a>
                                     </td>
                                     <td>
-                                        <a href="ubah/<?php echo $data->id_berita ?>"><i class="fa fa-edit"></i>Ubah</a>
-                                        <a href="hapus/<?php echo $data->id_berita ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
+                                        <a href="<?php echo base_url('agenda/ubah/'.$data->id_berita) ?>"><i class="fa fa-edit"></i>Ubah</a>
+                                        <a href="<?php echo base_url('agenda/hapus/'.$data->id_berita) ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 <?php

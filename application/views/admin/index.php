@@ -23,7 +23,7 @@
                 <div class="icon">
                   <i class="fa fa-money"></i>
                 </div>
-                <a href="#" class="small-box-footer">
+                <a href="<?php echo base_url('admin/donasi')?>" class="small-box-footer">
                   More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>
@@ -43,7 +43,7 @@
                 <div class="icon">
                   <i class="fa fa-list"></i>
                 </div>
-                <a href="#" class="small-box-footer">
+                <a href="<?php echo base_url('admin/agenda')?>" class="small-box-footer">
                   More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>
@@ -62,7 +62,7 @@
                 <div class="icon">
                   <i class="fa fa-folder-open"></i>
                 </div>
-                <a href="#" class="small-box-footer">
+                <a href="<?php echo base_url('admin/laporan')?>" class="small-box-footer">
                   More info <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>

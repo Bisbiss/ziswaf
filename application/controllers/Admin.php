@@ -9,6 +9,8 @@ class Admin extends CI_Controller {
         $this->load->library('session');
         $this->load->model('ModelAkun');
         $this->load->model('ModelAgenda');
+        $this->load->model('ModelLaporan');
+        $this->load->model('ModelDonasi');
         if ($this->session->userdata('status')!='admin') {
             redirect('welcome');
         }       
@@ -36,6 +38,24 @@ class Admin extends CI_Controller {
         $this->load->view('template/head');
         $this->load->view('admin/menu');
         $this->load->view('admin/agenda',$data);
+        $this->load->view('template/foot');
+    }
+
+    public function laporan(){
+        $data['data'] = $this->ModelLaporan->get()->result();
+
+        $this->load->view('template/head');
+        $this->load->view('admin/menu');
+        $this->load->view('admin/laporan',$data);
+        $this->load->view('template/foot');
+    }
+
+    public function donasi(){
+        $data['data'] = $this->ModelDonasi->get()->result();
+
+        $this->load->view('template/head');
+        $this->load->view('admin/menu');
+        $this->load->view('admin/donasi',$data);
         $this->load->view('template/foot');
     }
 

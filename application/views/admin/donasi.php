@@ -4,9 +4,11 @@
         <div class="row">
             <div class="col-md">
                 <br>
-                <div class="card-danger">
+                <div class="card-success">
                     <div class="card-header">
-                        <h3 class="card-title">Kelola Akun</h3>  
+                        <h3 class="card-title" style="float:left">Kelola Donasi</h3>  
+                        <h3 class="card-title" style="float:right"><a href="#" data-target="#tambah">
+                        <i class="nav-icon fa fa-plus-square"> Tambah Donasi</i></a></h3>  
                     </div>
 
                     <div class="card-body">
@@ -15,7 +17,7 @@
                                 <th width="5%">No</th>
                                 <th width="25%">Nama</th>
                                 <th width="25%">Email</th>
-                                <th width="30%">Password</th>
+                                <th width="30%">Donasi</th>
                                 <th width="15%">Kelola</th>
                             </thead>
 
@@ -30,17 +32,22 @@
                                         <?php echo $id; ?>
                                     </td>
                                     <td>
-                                        <?php echo $data->username ?>
+                                        <?php echo $data->nama ?>
                                     </td>
                                     <td>
                                         <?php echo $data->email ?>
                                     </td>
                                     <td>
-                                        <?php echo $data->pass ?>
+                                        <span>Zakat Mal :</span><?php echo $data->zakat_mal ?> <br>
+                                        <span>Zakat Profesi :</span><?php echo $data->zakat_profesi ?> <br>
+                                        <span>Infak :</span><?php echo $data->infak ?> <br>
+                                        <span>Sedekah :</span><?php echo $data->sedekah ?> <br>
+                                        <span>Wakaf :</span><?php echo $data->wakaf ?> <br>
+                                        <span>Lainya</span><?php echo $data->lainya ?> 
                                     </td>
                                     <td>
-                                        <a href="ubah/<?php echo $data->id_user?>"><i class="fa fa-edit"></i>Ubah</a>
-                                        <a href="hapus/<?php echo $data->id_user?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
+                                        <a href="<?php echo base_url('donasi/ubah/'.$data->id_donasi) ?>"><i class="fa fa-edit"></i>Ubah</a>
+                                        <a href="<?php echo base_url('donasi/hapus/'.$data->id_donasi) ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 <?php
