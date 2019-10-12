@@ -38,7 +38,7 @@
                                         <?php echo $data->isi ?>
                                     </td>
                                     <td>
-                                        <a href="<?php echo base_url('assets/agenda/'.$data->file) ?>">Lihat file </a>
+                                        <a href="<?php echo base_url('assets/agenda/'.$data->foto) ?>">Lihat file </a>
                                     </td>
                                     <td>
                                         <a href="ubah/<?php echo $data->id_berita ?>"><i class="fa fa-edit"></i>Ubah</a>
