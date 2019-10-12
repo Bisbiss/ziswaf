@@ -6,16 +6,18 @@ class Home extends CI_Controller {
         parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('session');
+		$this->load->model('ModelAgenda');
         if ($this->session->userdata('status')!='user') {
             redirect('welcome');
         }
 	}
 	
 	function index(){
+		$agenda['agenda'] = $this->ModelAgenda->get()->result();
 		$this->load->view('template/head');
 		$this->load->view('home/menu');
-		$this->load->view('home/index');
-		$this->load->view('template/head');
+		$this->load->view('home/index', $agenda);
+		$this->load->view('template/foot');
 	}
 	function keluar(){
 
