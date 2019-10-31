@@ -2,11 +2,15 @@
 
 class ModelAgenda extends CI_Model{
     function get(){
-        return $this->db->get('berita');
+        return $this->db->get('agenda');
     }
 
-    function hapus($id_berita){
-        $this->db->where('id_berita', $id_berita);
-        return $this->db->delete('berita');
+    function hapus($id_agenda){
+        $this->db->where('id_agenda', $id_agenda);
+        return $this->db->delete('agenda');
+    }
+
+    function tambah($data){
+        return $this->db->insert('agenda', $data);
     }
 }

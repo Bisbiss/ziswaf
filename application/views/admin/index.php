@@ -30,7 +30,7 @@
           </div>
 
           <?php
-          $agenda = $this->db->query("select * from berita")->num_rows();
+          $agenda = $this->db->query("select * from agenda")->num_rows();
           ?>
           <div class="col-lg-3 col-6">
             <!-- small card -->

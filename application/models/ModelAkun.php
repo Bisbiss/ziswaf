@@ -13,8 +13,14 @@ class ModelAkun extends CI_Model{
 		return $this->db->get('user');
 	}
 
-	function hapus($id_user){
-		$this->db->where('id_user',$id_user);
+	function cek($username,$email){
+		$this->db->where('username',$username);
+		$this->db->where('email',$email);
+		return $this->db->get('user');
+	}
+
+	function hapus($username){
+		$this->db->where('username',$username);
 		return $this->db->delete('user');
 	}
 }

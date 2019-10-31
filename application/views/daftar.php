@@ -2,6 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+<?php
+    if (isset($_GET['pesan'])){
+     $pesan = $_GET['pesan'];
+        if($pesan=='gagal') {
+        ?>
+        <br>
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <marquee><strong>Username atau Email sudah terdaftar, Coba Lagi..!!</strong></marquee>
+        </div>
+      <?php }
+        else{
+      }
+    }
+  ?>
+
 <body class="hold-transition login-page" id="login">
   <!-- <div class="col-md-4"> -->
     <!-- general form elements -->
@@ -14,12 +29,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <form role="form" action="<?php echo base_url('welcome/daftarAkun'); ?>" method="post">
         <div class="card-body">
           <div class="form-group">
-            <label for="inputUsername">Email</label>
-            <input type="text" class="form-control" name="email" id="inputUsername" placeholder="contoh@email.com" required>
+            <label for="exampleInputPassword2">Username</label>
+            <input type="text" class="form-control" name="username" required id="exampleInputPassword2" maxvalue=25 placeholder="Masukan Username">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword2">Username</label>
-            <input type="text" class="form-control" name="username" required id="exampleInputPassword2" placeholder="Masukan Nama">
+            <label for="inputUsername">Email</label>
+            <input type="text" class="form-control" name="email" id="inputUsername" placeholder="contoh@email.com" required>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>

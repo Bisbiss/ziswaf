@@ -9,4 +9,8 @@ class ModelLaporan extends CI_Model{
         $this->db->where('id_laporan', $id_laporan);
         return $this->db->delete('laporan');
     }
+
+    function tambah($data){
+        return $this->db->insert('laporan', $data);
+    }
 }

@@ -16,4 +16,28 @@ class Laporan extends CI_Controller{
         $this->ModelLaporan->hapus($id_laporan);
         redirect('Admin/laporan');
     }
+
+    function tambah(){
+        $judul = $_POST['judul'];
+        $isi = $_POST['isi'];
+        $file = $_files['foto'];
+        $config['upload_path'] = './assets/laporan';
+        $config['allowed_types']='jpg|png|gif|jpeg';
+        $this->load->library('upload',$config);
+        if(!$this->upload->do_upload('file')){
+            echo "gagal";
+        }else{
+            $file=$this->upload->data('file_name');
+        }
+        $data = array(
+            'judul' => $judul,
+            'isi' => $isi,
+            'foto' => $file,
+            'waktu' => date('Y-m-d') 
+        );
+
+        $proses = $this->ModelLaporan->tambah($data);
+        // var_dump($proses);
+        redirect(base_url('admin/laporan'));
+    }
 }

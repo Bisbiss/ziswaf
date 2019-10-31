@@ -34,9 +34,13 @@ class Welcome extends CI_Controller {
 			'username' =>$username,
 			'pass' => md5($pass));
 
-
-		$daftar = $this->ModelAkun->daftarAkun($data);
-		redirect('welcome/index?pesan=dibuat');
+		$cek = $this->ModelAkun->cek($username,$email)->num_rows();
+		if($cek > 0){
+			redirect('welcome/daftar?pesan=gagal');
+		}else{
+		// $daftar = $this->ModelAkun->daftarAkun($data);
+			// redirect('welcome/index?pesan=dibuat');			
+		}
 	}
 
 	function prosesLogin(){

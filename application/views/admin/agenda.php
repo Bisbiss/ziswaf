@@ -7,7 +7,7 @@
                 <div class="card-info">
                     <div class="card-header">
                         <h3 class="card-title" style="float:left">Kelola Agenda</h3>  
-                        <h3 class="card-title" style="float:right"><a href="#" data-target="#tambah">
+                        <h3 class="card-title" style="float:right"><a href="#" data-target="#upload" data-toggle='modal'>
                         <i class="nav-icon fa fa-plus-square"> Tambah Agenda</i></a></h3>  
                     </div>
 
@@ -41,8 +41,8 @@
                                         <a href="<?php echo base_url('assets/agenda/'.$data->foto) ?>">Lihat file </a>
                                     </td>
                                     <td>
-                                        <a href="<?php echo base_url('agenda/ubah/'.$data->id_berita) ?>"><i class="fa fa-edit"></i>Ubah</a>
-                                        <a href="<?php echo base_url('agenda/hapus/'.$data->id_berita) ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
+                                        <a href="<?php echo base_url('agenda/ubah/'.$data->id_agenda) ?>"><i class="fa fa-edit"></i>Ubah</a>
+                                        <a href="<?php echo base_url('agenda/hapus/'.$data->id_agenda) ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 <?php
@@ -55,5 +55,45 @@
             </div>
         </div>
       </div>
+    </div>
+
+    <div class="modal fade" id="upload"  role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h4 class="modal-title">Tambah Agenda</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <?php echo form_open_multipart('agenda/tambah'); ?>
+                <form role="form" method="POST" action ="<?php base_url('agenda/tambah') ?>">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label class="control-label col-sm" for="tipe">Judul Agenda</label>
+                        <div class="col-sm">
+                            <input type="text" name="judul" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm" for="tipe">Isi Agenda</label>
+                        <div class="col-sm">
+                            <textarea name="isi" class="form-control" cols="30" rows="7"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="control-label col-sm" for="path">File</label>
+                        <div class="col-sm">
+                            <input type="file" name="file" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                    
+                <div class="modal-footer">
+                    <input type ="submit" name ="submit" class="btn btn-primary" value="Submit"/>
+                </div>  
+                </form>
+            </div>
+        </div>
     </div>
   </section>

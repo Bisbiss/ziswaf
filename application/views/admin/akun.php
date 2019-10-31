@@ -39,8 +39,8 @@
                                         <?php echo $data->pass ?>
                                     </td>
                                     <td>
-                                        <a href="ubah/<?php echo $data->id_user?>"><i class="fa fa-edit"></i>Ubah</a>
-                                        <a href="hapus/<?php echo $data->id_user?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
+                                        <a href="ubah/<?php echo $data->username ?>"><i class="fa fa-edit"></i>Ubah</a>
+                                        <a href="hapus/<?php echo $data->username ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 <?php
