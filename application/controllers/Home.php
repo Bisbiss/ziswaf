@@ -13,10 +13,10 @@ class Home extends CI_Controller {
 	}
 	
 	function index(){
-		$agenda['agenda'] = $this->ModelAgenda->get()->result();
+		$item['item'] = $this->ModelAgenda->get()->result();
 		$this->load->view('template/head');
 		$this->load->view('home/menu');
-		$this->load->view('home/index', $agenda);
+		$this->load->view('home/index', $item);
 		$this->load->view('template/foot');
 	}
 	function keluar(){

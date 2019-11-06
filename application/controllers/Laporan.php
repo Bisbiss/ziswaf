@@ -20,7 +20,8 @@ class Laporan extends CI_Controller{
     function tambah(){
         $judul = $_POST['judul'];
         $isi = $_POST['isi'];
-        $file = $_files['foto'];
+        $file = $_FILES['foto'];
+        // var_dump($file);
         $config['upload_path'] = './assets/laporan';
         $config['allowed_types']='jpg|png|gif|jpeg';
         $this->load->library('upload',$config);
@@ -33,7 +34,7 @@ class Laporan extends CI_Controller{
             'judul' => $judul,
             'isi' => $isi,
             'foto' => $file,
-            'waktu' => date('Y-m-d') 
+            'waktu' => date('Y-m-d')
         );
 
         $proses = $this->ModelLaporan->tambah($data);

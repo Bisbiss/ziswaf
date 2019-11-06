@@ -20,7 +20,8 @@ class Agenda extends CI_Controller{
     function tambah(){
         $judul = $_POST['judul'];
         $isi = $_POST['isi'];
-        $file = $_files['file'];
+        $file = $_FILES['file'];
+        // var_dump($file);
         $config['upload_path'] = './assets/agenda';
         $config['allowed_types']='jpg|png|gif|jpeg';
         $this->load->library('upload',$config);

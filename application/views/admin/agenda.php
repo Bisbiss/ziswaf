@@ -65,7 +65,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <?php echo form_open_multipart('agenda/tambah'); ?>
-                <form role="form" method="POST" action ="<?php base_url('agenda/tambah') ?>">
+                <!-- <form role="form" method="POST" action ="<?php base_url('agenda/tambah') ?>"> -->
                 <div class="modal-body">
                     <div class="form-group">
                         <label class="control-label col-sm" for="tipe">Judul Agenda</label>
@@ -92,7 +92,7 @@
                 <div class="modal-footer">
                     <input type ="submit" name ="submit" class="btn btn-primary" value="Submit"/>
                 </div>  
-                </form>
+                <?php form_close(); ?>
             </div>
         </div>
     </div>
