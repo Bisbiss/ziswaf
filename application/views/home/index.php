@@ -1,4 +1,3 @@
-<?php $laporan = $this->db->query("SELECT * FROM laporan")->result();?>
   <section class="content">
     <div class="container-fluid">
       <div class="container">
@@ -10,48 +9,23 @@
             </div>
         </div>
 
-      <div class="bd-example">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-          </ol>
-
-        <?php 
-        $no =1;
-        foreach ($item as $item){ ?>
-        <div class="carousel-inner">
-          <?php if($no == 1){ ?>
-          <div class="carousel-item active">
-          <?php } else {?>
-          <div class="carousel-item">
-          <?php } ?>
-            <center><img src="<?php echo base_url('assets/agenda/'.$item->foto)?>" class="img-fluid"></center>
-            <div class="carousel-caption d-none d-md-block">
-              <h5><?php echo $item->judul ?></h5>
-              <p><?php echo $item->isi ?></p>
+        <div class="row">
+          <div class="col-md">
+            <div class="jumbotron" style="background-image: url(<?php echo base_url('assets/dist/img/back.jpg')?>)">
+              <h1 class="display-4 text-white">Selamat Datang</h1>
+              <hr class="my-4">
+              <p class="text-white">E-ZISWAF aplikasi untuk zakat infak sedekah dan wakaf online berbasis web.</p>
+              <a class="btn btn-primary btn-lg" href="bantuan" role="button">Learn more</a>
             </div>
           </div>
-          <?php $no++;
-           } ?>
-          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div> 
-    </div>
+        </div>
 
         <!-- Pembatas -->
         <div class="row">
           <div class="col-lg">
             <center>
               <br><br>
-                <h3>Daftar Laporan</h3>
+                <h3>Daftar Agenda</h3>
                 <hr>
             </center>
           </div>
@@ -59,12 +33,12 @@
 
         <!--Laporan  -->
         <div class="row">
-          <?php foreach ($laporan as $laporan) { ?>
+          <?php foreach ($item as $item) { ?>
           <div class="col-md-4">
             <div class="card">
-              <img src="<?php echo base_url('assets/laporan/'.$laporan->foto)?>" class="card-img-top img-fluid" style="height:204px">
+              <img src="<?php echo base_url('assets/agenda/'.$item->foto)?>" class="card-img-top img-fluid" style="height:204px">
               <div class="card-body">
-                <p class="card-text"><?php echo $laporan->judul?></p>
+                <a href="<?php echo base_url('Home/agenda/'.$item->id_agenda)?>" class="card-text"><?php echo $item->judul?></a>
               </div>
             </div>
           </div>

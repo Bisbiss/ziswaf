@@ -13,4 +13,9 @@ class ModelAgenda extends CI_Model{
     function tambah($data){
         return $this->db->insert('agenda', $data);
     }
+
+    function get_where($id){
+        $this->db->where('id_agenda',$id);
+        return $this->db->get('agenda');
+    }
 }
