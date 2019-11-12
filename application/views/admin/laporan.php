@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-md">
                 <br>
-                <div class="card-warning">
-                    <div class="card-header">
+                <div class="card">
+                    <div class="card-header bg-warning">
                         <h3 class="card-title" style="float:left">Kelola Laporan</h3>  
                         <h3 class="card-title" style="float:right"><a href="#" data-target="#tambah" data-toggle='modal'>
                         <i class="nav-icon fa fa-plus-square"> Tambah Laporan</i></a></h3>  
