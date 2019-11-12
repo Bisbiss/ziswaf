@@ -2,6 +2,7 @@
 
 class ModelAgenda extends CI_Model{
     function get(){
+        $this->db->order_by('id_agenda', 'DESC');
         return $this->db->get('agenda');
     }
 

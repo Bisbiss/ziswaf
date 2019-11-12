@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-md">
                 <br>
-                <div class="card-info">
-                    <div class="card-header">
+                <div class="card">
+                    <div class="card-header bg-info">
                         <h3 class="card-title" style="float:left">Kelola Agenda</h3>  
                         <h3 class="card-title" style="float:right"><a href="#" data-target="#upload" data-toggle='modal'>
                         <i class="nav-icon fa fa-plus-square"> Tambah Agenda</i></a></h3>  
