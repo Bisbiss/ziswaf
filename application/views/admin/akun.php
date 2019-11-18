@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-md">
                 <br>
-                <div class="card-danger">
-                    <div class="card-header">
+                <div class="card">
+                    <div class="card-header bg-danger">
                         <h3 class="card-title">Kelola Akun</h3>  
                     </div>
 
