@@ -13,6 +13,11 @@ class ModelAkun extends CI_Model{
 		return $this->db->get('user');
 	}
 
+	function get_where($username){
+		$this->db->where('username', $username);
+		return $this->db->get('user');
+	}
+
 	function cek($username,$email){
 		$this->db->where('username',$username);
 		$this->db->where('email',$email);

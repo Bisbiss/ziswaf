@@ -8,6 +8,8 @@ class Home extends CI_Controller {
 		$this->load->library('session');
 		$this->load->model('ModelAgenda');
 		$this->load->model('ModelLaporan');
+		$this->load->model('ModelAkun');
+		$this->load->model('ModelDonasi');
         if ($this->session->userdata('status')!='user') {
             redirect('welcome');
         }
@@ -20,6 +22,15 @@ class Home extends CI_Controller {
 		$this->load->view('home/index', $item);
 		$this->load->view('template/foot');
 	}
+
+	function profil(){
+		$data['data'] = $this->ModelAkun->get_where($this->session->userdata('user'))->result();
+		$this->load->view('template/head');
+		$this->load->view('home/menu');
+		$this->load->view('home/profile', $data);
+		$this->load->view('template/foot');
+	}
+
 	function laporan(){
 		$laporan['laporan'] = $this->ModelLaporan->get()->result();
 		$this->load->view('template/head');
@@ -34,5 +45,42 @@ class Home extends CI_Controller {
 		$this->load->view('home/menu');
 		$this->load->view('home/agenda', $item);
 		$this->load->view('template/foot');
+	}
+
+	function donasi(){
+		$username = $this->session->userdata('user');
+		$data['data'] = $this->ModelAkun->get_where($username)->result();
+		$this->load->view('template/head');
+		$this->load->view('home/menu');
+		$this->load->view('home/donasi', $data);
+		$this->load->view('template/foot');
+		// echo $username;
+	}
+	function submit_donasi(){
+		$name = $_POST['nama_donatur'];
+		$email = $_POST['email'];
+		$zakat_mal = $_POST['zakat'];
+		$zakat_profesi = $_POST['zakat_profesi'];
+		$infak = $_POST['infak'];
+		$sedekah = $_POST['sedekah'];
+		$wakaf = $_POST['wakaf'];
+		$lainya = $_POST['lainya'];
+		$data = array(
+			'nama' => $name,
+			'email' => $email,
+			'zakat_mal' => $zakat_mal,
+			'zakat_profesi' => $zakat_profesi,
+			'infak' => $infak,
+			'wakaf' => $wakaf,
+			'sedekah' => $sedekah,
+			'lainya' => $lainya,
+			'waktu' => date('Y-m-d')
+		);
+		$tambah = $this->ModelDonasi->tambah($data);
+		if (!$tambah) {
+			echo "Data Gagal Ditambahkan";
+		} else {
+			redirect(base_url('home/profil'));
+		}
 	}
 }

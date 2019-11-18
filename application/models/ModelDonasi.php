@@ -9,4 +9,8 @@ class ModelDonasi extends CI_Model{
         $this->db->where('id_donasi', $id_donasi);
         return $this->db->delete('donasi');
     }
+
+    function tambah($data){
+        return $this->db->insert('donasi',$data);
+    }
 }

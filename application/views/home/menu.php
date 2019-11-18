@@ -7,16 +7,16 @@
 
 	  	<ul class="nav justify-content-end">
 		  <li class="nav-item">
-		    <a class="nav-link" href="home/donasi">Donasi</a>
+		    <a class="nav-link" href="<?php echo base_url('home/donasi') ?>">Donasi</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" href="home/laporan">Laporan</a>
+		    <a class="nav-link" href="<?php echo base_url('home/laporan') ?>">Laporan</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" href="home/profil">Profil</a>
+		    <a class="nav-link" href="<?php echo base_url('home/profil') ?>">Profil</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" href="home/bantuan">Bantuan</a>
+		    <a class="nav-link" href="<?php echo base_url('home/bantuan') ?>">Bantuan</a>
 		  </li>
 		  <li class="nav-item">
 		    <a class="nav-link" href="<?php echo base_url('welcome/logout')?> ">Keluar</a>
