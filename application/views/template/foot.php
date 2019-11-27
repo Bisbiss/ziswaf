@@ -1,5 +1,5 @@
 
-  <footer class="footer">
+  <footer class="footer bg-info">
     <hr>
     <strong><center>Copyright &copy; 2019 <a href="http://bisbiss.github.io">Bisbiss</a>.</strong>
     All rights reserved.</center>
