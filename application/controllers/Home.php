@@ -80,7 +80,24 @@ class Home extends CI_Controller {
 		if (!$tambah) {
 			echo "Data Gagal Ditambahkan";
 		} else {
-			redirect(base_url('home/profil'));
+			redirect(base_url('home/donasi_done/'));
 		}
+	}
+	function donasi_done(){
+		$nama = $this->session->userdata('user');
+		$akun =$this->db->query("select * from user Where username = '$nama'")->row();
+		// var_dump($akun);
+		// echo $akun->email;
+		$data['data'] = $this->ModelDonasi->get_where($akun->email)->row();
+		$this->load->view('template/head');
+		$this->load->view('home/menu');
+		$this->load->view('home/donasi_done',$data);
+		$this->load->view('template/foot');
+	}
+	function bantuan(){
+		$this->load->view('template/head');
+		$this->load->view('home/menu');
+		$this->load->view('home/bantuan');
+		$this->load->view('template/foot');
 	}
 }

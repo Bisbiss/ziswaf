@@ -1,3 +1,21 @@
 .nav-link:hover{
 	background-color: #30C7FF;
 }
+.bayar:hover{
+	transform : scale(1.2);
+}
+.callout{
+  height: 100vh;
+  overflow: hidden; 
+}
+footer{
+  position:absolute;
+  bottom:0px;
+}
+.container{
+  position: relative;
+  min-height: 100%;
+}
+html,body{
+  height:100%;
+}

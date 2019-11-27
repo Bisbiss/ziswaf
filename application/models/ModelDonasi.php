@@ -13,4 +13,10 @@ class ModelDonasi extends CI_Model{
     function tambah($data){
         return $this->db->insert('donasi',$data);
     }
+
+    function get_where($email){
+        $this->db->where('email',$email);
+        $this->db->order_by('id_donasi', 'DESC');
+        return $this->db->get('donasi');
+    }
 }
