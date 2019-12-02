@@ -38,7 +38,7 @@ class Admin extends CI_Controller {
         $this->load->view('template/head');
         $this->load->view('admin/menu');
         $this->load->view('admin/agenda',$data);
-        $this->load->view('template/foot');
+        // $this->load->view('template/foot');
     }
 
     public function laporan(){
@@ -56,7 +56,7 @@ class Admin extends CI_Controller {
         $this->load->view('template/head');
         $this->load->view('admin/menu');
         $this->load->view('admin/donasi',$data);
-        $this->load->view('template/foot');
+        // $this->load->view('template/foot');
     }
 
     function hapus($id_user){

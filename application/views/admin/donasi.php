@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-md">
                 <br>
-                <div class="card-success">
-                    <div class="card-header">
+                <div class="card">
+                    <div class="card-header bg-success">
                         <h3 class="card-title" style="float:left">Kelola Donasi</h3>  
                         <h3 class="card-title" style="float:right"><a href="#" data-target="#tambah">
                         <i class="nav-icon fa fa-plus-square"> Tambah Donasi</i></a></h3>  
@@ -15,10 +15,11 @@
                         <table id="example1" class="table table-bordered table-striped table-responsive">
                             <thead>
                                 <th width="5%">No</th>
-                                <th width="25%">Nama</th>
-                                <th width="25%">Email</th>
+                                <th width="18%">Nama</th>
+                                <th width="18%">Email</th>
                                 <th width="30%">Donasi</th>
                                 <th width="15%">Kelola</th>
+                                <th width="14%">Status</th>
                             </thead>
 
                             <tbody>
@@ -48,6 +49,14 @@
                                     <td>
                                         <a href="<?php echo base_url('donasi/ubah/'.$data->id_donasi) ?>"><i class="fa fa-edit"></i>Ubah</a>
                                         <a href="<?php echo base_url('donasi/hapus/'.$data->id_donasi) ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
+                                    </td>
+                                    <td>
+                                        <?php if($data->verifikasi==1){?>
+                                            <span class="badge badge-success">Verifikasi</span>
+                                        <?php } else{ ?>
+                                            <span class="badge badge-danger">Belum Terverifkasi</span>
+                                            <a href="<?php echo base_url('Donasi/verifikasi/'.$data->id_donasi) ?>">Verifikasi</a>
+                                        <?php } ?>   
                                     </td>
                                 </tr>
                                 <?php

@@ -16,4 +16,12 @@ class Donasi extends CI_Controller{
         $this->ModelDonasi->hapus($id_donasi);
         redirect('Admin/donasi');
     }
+
+    function verifikasi($id_donasi){
+        $this->ModelDonasi->verifikasi($id_donasi);
+            echo "<script language='javascript'>
+                window.alert('Verifikasi Berhasil');
+                window.location.href='../../admin/donasi';
+                </script>";        
+    }
 }
