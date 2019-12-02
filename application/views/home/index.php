@@ -15,7 +15,7 @@
               <h1 class="display-4 text-white">Selamat Datang</h1>
               <hr class="my-4">
               <p class="text-white">E-ZISWAF aplikasi untuk zakat infak sedekah dan wakaf online berbasis web.</p>
-              <a class="btn btn-primary btn-lg" href="bantuan" role="button">Learn more</a>
+              <a class="btn btn-primary btn-lg" href="home/bantuan" role="button">Learn more</a>
             </div>
           </div>
         </div>

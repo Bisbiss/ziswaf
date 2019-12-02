@@ -21,7 +21,7 @@
                 <?php 
                 $dana = 0;
                 $total = 0;
-                $sql = $this->db->query("SELECT zakat_mal,zakat_profesi,infak,sedekah,wakaf,lainya FROM donasi WHERE email = '$data->email'"); 
+                $sql = $this->db->query("SELECT zakat_mal,zakat_profesi,infak,sedekah,wakaf,lainya FROM donasi WHERE email = '$data->email' && verifikasi=1"); 
                 $query = $sql->result();
                 $total += $sql->num_rows();
                 foreach ($query as $hitung){
