@@ -30,7 +30,7 @@ class Home extends CI_Controller {
 		$this->load->view('home/profile', $data);
 		$this->load->view('template/foot');
 	}
-
+ 
 	function laporan(){
 		$laporan['laporan'] = $this->ModelLaporan->get()->result();
 		$this->load->view('template/head');

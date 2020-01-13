@@ -15,32 +15,28 @@
                     <h5 class="widget-user-desc"><?php echo $data->email ?></h5>
                 </div>
                 <div class="widget-user-image">
-                    <img class="img-circle" src="<?php echo base_url('./assets/dist/img/avatar5.png') ?>" alt="User Avatar">
+                    <img class="img-circle" src="<?php echo base_url('./assets/dist/img/bisbis.jpeg') ?>" alt="User Avatar">
                 </div>
                 <div class="card-footer">
                 <?php 
-                $dana = 0;
-                $total = 0;
-                $sql = $this->db->query("SELECT zakat_mal,zakat_profesi,infak,sedekah,wakaf,lainya FROM donasi WHERE email = '$data->email' && verifikasi=1"); 
-                $query = $sql->result();
-                $total += $sql->num_rows();
-                foreach ($query as $hitung){
-                    $dana += $hitung->zakat_mal + $hitung->zakat_profesi + $hitung->infak + $hitung->sedekah + $hitung->wakaf;
-                }
+                $dana = $this->db->query("SELECT SUM(zakat_mal) AS jml_mal,SUM(zakat_profesi) AS jml_profesi FROM donasi WHERE email = '$data->email' && verifikasi=1")->row(); 
+                $jml_zakat = $dana->jml_mal + $dana->jml_profesi;
+                $donasi = $this->db->query("SELECT SUM(infak) AS jml_infak,SUM(sedekah) AS jml_sedekah,SUM(wakaf) AS jml_wakaf FROM donasi WHERE email = '$data->email' && verifikasi=1")->row(); 
+                $jml_donasi = $donasi->jml_infak + $donasi->jml_sedekah;
                 ?>
                     <div class="row">
                         <div class="col-sm-6 border-right">
                             <div class="description-block">
-                            <h5 class="description-header"><?php echo "Rp ".$dana ?></h5>
-                            <span class="description-text">Jumlah Donasi</span>
+                            <h5 class="description-header"><?php echo "Rp ".number_format($jml_zakat,2,',','.'); ?></h5>
+                            <span class="description-text">TOTAL ZAKAT</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6 border-right">
                             <div class="description-block">
-                            <h5 class="description-header"><?php echo $total." Kali"; ?></h5>
-                            <span class="description-text">Total Donasi</span>
+                            <h5 class="description-header"><?php echo "Rp ".number_format($jml_donasi,2,',','.'); ?></h5>
+                            <span class="description-text">TOTAL DONASI</span>
                             </div>
                             <!-- /.description-block -->
                         </div>
