@@ -38,8 +38,8 @@ class Welcome extends CI_Controller {
 		if($cek > 0){
 			redirect('welcome/daftar?pesan=gagal');
 		}else{
-		// $daftar = $this->ModelAkun->daftarAkun($data);
-			// redirect('welcome/index?pesan=dibuat');			
+			$daftar = $this->ModelAkun->daftarAkun($data);
+			redirect('welcome/index?pesan=dibuat');			
 		}
 	}
 

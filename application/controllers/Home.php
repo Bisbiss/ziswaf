@@ -20,7 +20,7 @@ class Home extends CI_Controller {
 		$this->load->view('template/head');
 		$this->load->view('home/menu');
 		$this->load->view('home/index', $item);
-		// $this->load->view('template/foot');
+		$this->load->view('template/foot');
 	}
 
 	function profil(){
@@ -28,7 +28,7 @@ class Home extends CI_Controller {
 		$this->load->view('template/head');
 		$this->load->view('home/menu');
 		$this->load->view('home/profile', $data);
-		// $this->load->view('template/foot');
+		$this->load->view('template/foot');
 	}
 
 	function laporan(){
@@ -36,7 +36,7 @@ class Home extends CI_Controller {
 		$this->load->view('template/head');
 		$this->load->view('home/menu');
 		$this->load->view('home/laporan', $laporan);
-		// $this->load->view('template/foot');
+		$this->load->view('template/foot');
 	}
 
 	function agenda($id){
@@ -44,7 +44,7 @@ class Home extends CI_Controller {
 		$this->load->view('template/head');
 		$this->load->view('home/menu');
 		$this->load->view('home/agenda', $item);
-		// $this->load->view('template/foot');
+		$this->load->view('template/foot');
 	}
 
 	function donasi(){
@@ -53,7 +53,7 @@ class Home extends CI_Controller {
 		$this->load->view('template/head');
 		$this->load->view('home/menu');
 		$this->load->view('home/donasi', $data);
-		// $this->load->view('template/foot');
+		$this->load->view('template/foot');
 		// echo $username;
 	}
 	function submit_donasi(){
@@ -92,12 +92,12 @@ class Home extends CI_Controller {
 		$this->load->view('template/head');
 		$this->load->view('home/menu');
 		$this->load->view('home/donasi_done',$data);
-		// $this->load->view('template/foot');
+		$this->load->view('template/foot');
 	}
 	function bantuan(){
 		$this->load->view('template/head');
 		$this->load->view('home/menu');
 		$this->load->view('home/bantuan');
-		// $this->load->view('template/foot');
+		$this->load->view('template/foot');
 	}
 }

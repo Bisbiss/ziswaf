@@ -22,7 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- general form elements -->
     <div class="card login-box">
       <div class="card-header">
-        <img src="<?php echo base_url('assets/dist/img/logo.png') ?>" class="img-fluid">
+        <img src="<?php echo base_url('assets/dist/img/logoo.jpeg') ?>" class="img-fluid">
       </div>
       <!-- /.card-header -->
       <!-- form start -->

@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- general form elements -->
     <div class="card login-box">
       <div class="card-header">
-        <img src="<?php echo base_url('assets/dist/img/logo.png') ?>" class="img-fluid">
+        <img src="<?php echo base_url('assets/dist/img/logoo.jpeg') ?>" class="img-fluid">
       </div>
       <!-- /.card-header -->
       <!-- form start -->
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="card-footer">
           <hr>
-          <a href="<?php echo base_url('welcome/daftar'); ?>" class="btn btn-danger">Daftar</a>
+          <a href="<?php echo base_url('welcome/daftar'); ?>" class="btn btn-warning">Daftar</a>
           <button type="submit" class="btn btn-info" style="float: right;">Login</button>
           <button type="reset" class="btn" style="float: right;">Reset</button>
         </div>

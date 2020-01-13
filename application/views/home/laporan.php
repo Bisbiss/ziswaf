@@ -30,7 +30,7 @@
                                 <span class="product-title"><?php echo $laporan->judul ?> </span>
                                     <span class="badge badge-warning float-right"><?php echo $laporan->jumlah ?></span>
                                 <span class="product-description">
-                                    <a href="#">Lihat Laporan</a>
+                                    <span><?php echo $laporan->isi ?></span>
                                 </span>
                                 </div>
                             </li>
