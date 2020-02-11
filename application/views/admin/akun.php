@@ -39,12 +39,12 @@
                                         <?php echo $data->pass ?>
                                     </td>
                                     <td>
-                                        <a href="#" data-target="<?php echo '#ubah'.$data->username ?>" data-toggle='modal'><i class="fa fa-edit"></i>Ubah</a>
+                                        <a href="#" data-target="<?php echo '#ubah'.$data->email ?>" data-toggle='modal'><i class="fa fa-edit"></i>Ubah</a>
                                         <a href="hapus/<?php echo $data->username ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
                                     </td>
 
                                     <!-- Form Ubah Akun -->
-                                    <div class="modal fade" id="<?php echo 'ubah'.$data->username ?>"  role="dialog">
+                                    <div class="modal fade" id="<?php echo 'ubah'.$data->email ?>"  role="dialog">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header bg-primary">

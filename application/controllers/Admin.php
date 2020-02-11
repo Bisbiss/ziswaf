@@ -68,8 +68,8 @@ class Admin extends CI_Controller {
         $this->load->view('template/foot');
     }
 
-    function hapus($id_user){
-        $hapus = $this->ModelAkun->hapus($id_user);
+    function hapus($username){
+        $hapus = $this->ModelAkun->hapus($username);
         if ($hapus) {
             redirect('admin/akun');   
         } else {
