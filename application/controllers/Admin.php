@@ -76,5 +76,28 @@ class Admin extends CI_Controller {
         }
     }
 
-    
+    function ubah_akun(){
+        $email = $_POST['email'];
+		$username = $_POST['username'];
+		$pass = $_POST['pass'];
+
+		$data = array(
+			'email' => $email,
+			'username' =>$username,
+            'pass' => md5($pass)
+        );
+        $ubah = $this->ModelAkun->ubah($data,$email);
+        if ($ubah) {
+            echo "<script language='javascript'>
+                window.alert('Data Berhasil Diubah');
+                window.location.href='../admin/Akun';
+                </script>";
+        } else {
+            echo "<script language='javascript'>
+                window.alert('Data Gagal Diubah');
+                window.location.href='../admin/Akun';
+                </script>";
+        }
+        
+    }
 }

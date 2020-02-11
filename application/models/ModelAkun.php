@@ -28,4 +28,9 @@ class ModelAkun extends CI_Model{
 		$this->db->where('username',$username);
 		return $this->db->delete('user');
 	}
+
+	function ubah($data, $email){
+		$this->db->where('email',$email);
+		return $this->db->update('user',$data);
+	}
 }
