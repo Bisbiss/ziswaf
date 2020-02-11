@@ -28,7 +28,7 @@ class Agenda extends CI_Controller{
         $config['allowed_types']='jpg|png|gif|jpeg';
         $this->load->library('upload',$config);
         if(!$this->upload->do_upload('file')){
-            echo "gagal";
+            die("Gagal Upload File");
         }else{
             $file=$this->upload->data('file_name');
         }
