@@ -19,4 +19,9 @@ class ModelAgenda extends CI_Model{
         $this->db->where('id_agenda',$id);
         return $this->db->get('agenda');
     }
+
+    function ubah($data,$id_agenda){
+        $this->db->where('id_agenda',$id_agenda);
+        return $this->db->update('agenda', $data);
+    }
 }

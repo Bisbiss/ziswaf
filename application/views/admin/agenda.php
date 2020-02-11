@@ -41,7 +41,7 @@
                                         <a href="<?php echo base_url('assets/agenda/'.$data->foto) ?>">Lihat file </a>
                                     </td>
                                     <td>
-                                        <a href="<?php echo base_url('agenda/ubah/'.$data->id_agenda) ?>"><i class="fa fa-edit"></i>Ubah</a>
+                                        <a href="<?php echo base_url('agenda/ubah/'.$data->id_agenda) ?>" ><i class="fa fa-edit"></i>Ubah</a>
                                         <a href="<?php echo base_url('agenda/hapus/'.$data->id_agenda) ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
@@ -59,6 +59,7 @@
 
 </section>
 
+    <!-- Tambah Data -->
     <div class="modal fade" id="tambah"  role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -71,21 +72,21 @@
                     <div class="form-group">
                         <label class="control-label col-sm" for="tipe">Judul Agenda</label>
                         <div class="col-sm">
-                            <input type="text" name="judul" class="form-control">
+                            <input type="text" name="judul" class="form-control" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-sm" for="tipe">Isi Agenda</label>
                         <div class="col-sm">
-                            <textarea name="isi" class="form-control" cols="30" rows="7"></textarea>
+                            <textarea name="isi" class="form-control" cols="30" rows="7" required></textarea>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label class="control-label col-sm" for="path">File</label>
                         <div class="col-sm">
-                            <input type="file" name="file" class="form-control">
+                            <input type="file" name="file" class="form-control" required>
                         </div>
                     </div>
                 </div>
