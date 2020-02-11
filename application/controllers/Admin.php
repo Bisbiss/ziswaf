@@ -38,7 +38,7 @@ class Admin extends CI_Controller {
         $this->load->view('template/head');
         $this->load->view('admin/menu');
         $this->load->view('admin/agenda',$data);
-        // $this->load->view('template/foot');
+        $this->load->view('template/foot');
     }
 
     public function laporan(){
@@ -56,7 +56,16 @@ class Admin extends CI_Controller {
         $this->load->view('template/head');
         $this->load->view('admin/menu');
         $this->load->view('admin/donasi',$data);
-        // $this->load->view('template/foot');
+        $this->load->view('template/foot');
+    }
+
+    function tambah_donasi(){
+        $username = $this->session->userdata('user');
+		$data['data'] = $this->ModelAkun->get_where($username)->result();
+        $this->load->view('template/head');
+        $this->load->view('admin/menu');
+        $this->load->view('admin/tambah_donasi', $data);
+        $this->load->view('template/foot');
     }
 
     function hapus($id_user){
@@ -66,4 +75,6 @@ class Admin extends CI_Controller {
         } else {
         }
     }
+
+    
 }

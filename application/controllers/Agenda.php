@@ -14,14 +14,16 @@ class Agenda extends CI_Controller{
 
     function hapus($id_agenda){
         $this->ModelAgenda->hapus($id_agenda);
-        redirect('Admin/agenda');
+        echo "<script language='javascript'>
+                window.alert('Data Berhasil Dihapus');
+                window.location.href='../../admin/Agenda';
+                </script>";
     }
 
     function tambah(){
         $judul = $_POST['judul'];
         $isi = $_POST['isi'];
-        $file = $_FILES['file'];
-        // var_dump($file);
+        $data_file = $_FILES['file'];
         $config['upload_path'] = './assets/agenda';
         $config['allowed_types']='jpg|png|gif|jpeg';
         $this->load->library('upload',$config);
@@ -33,7 +35,7 @@ class Agenda extends CI_Controller{
         $data = array(
             'judul' => $judul,
             'isi' => $isi,
-            'foto' => $file,
+            'foto' => $data_file['name'],
             'waktu' => date('Y-m-d')
         );
 

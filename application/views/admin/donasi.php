@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header bg-success">
                         <h3 class="card-title" style="float:left">Kelola Donasi</h3>  
-                        <h3 class="card-title" style="float:right"><a href="#" data-target="#tambah">
+                        <h3 class="card-title" style="float:right"><a href="<?php echo base_url('admin/tambah_donasi') ?>" data-target="#tambah">
                         <i class="nav-icon fa fa-plus-square"> Tambah Donasi</i></a></h3>  
                     </div>
 
@@ -47,15 +47,20 @@
                                         <span>Lainya</span><?php echo $data->lainya ?> 
                                     </td>
                                     <td>
-                                        <a href="<?php echo base_url('donasi/ubah/'.$data->id_donasi) ?>"><i class="fa fa-edit"></i>Ubah</a>
-                                        <a href="<?php echo base_url('donasi/hapus/'.$data->id_donasi) ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
+                                        <?php if($data->verifikasi==1){
+                                            
+                                        }else{ ?>
+                                            <a href="<?php echo base_url('donasi/ubah/'.$data->id_donasi) ?>"><i class="fa fa-edit"></i>Ubah</a>
+                                            <a href="<?php echo base_url('donasi/hapus/'.$data->id_donasi) ?>" style="color:red">Hapus<i class="fa fa-trash"></i></a>
+                                        <?php } ?>
                                     </td>
                                     <td>
                                         <?php if($data->verifikasi==1){?>
-                                            <span class="badge badge-success">Verifikasi</span>
+                                            <span class="badge badge-success">Terverifikasi</span>
                                         <?php } else{ ?>
                                             <span class="badge badge-danger">Belum Terverifkasi</span>
-                                            <a href="<?php echo base_url('Donasi/verifikasi/'.$data->id_donasi) ?>">Verifikasi</a>
+                                            <a href="<?php echo base_url('Donasi/verifikasi/'.$data->id_donasi) ?>">
+                                            <span class="badge badge-info">Verifikasi Data</span></a>
                                         <?php } ?>   
                                     </td>
                                 </tr>
