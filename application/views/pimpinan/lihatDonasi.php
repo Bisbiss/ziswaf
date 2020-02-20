@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header bg-info">
                         <h3 class="card-title" style="float:left">Kelola Donasi</h3>  
-                        <h3 class="card-title" style="float:right"><a href="<?php echo base_url('admin/tambah_donasi') ?>" data-target="#tambah">
+                        <h3 class="card-title" style="float:right"><a href="<?php echo base_url('pimpinan/laporan_pdf') ?>" data-target="#tambah">
                         <i class="nav-icon fa fa-print"> Cetak Laporan</i></a></h3>  
                     </div>
 
@@ -28,7 +28,7 @@
                                 foreach ($data as $data):
                                     $id++;
                                 ?>
-                                <tr>
+                                <tr><center>  
                                     <td>
                                         <?php echo $id; ?>
                                     </td>
@@ -55,6 +55,7 @@
                                             <span class="badge badge-danger">Belum Terverifikasi</span>
                                         <?php } ?>   
                                     </td>
+                                    </center>
                                 </tr>
                                 <?php
                                 endforeach;

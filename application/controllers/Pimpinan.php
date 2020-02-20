@@ -26,4 +26,15 @@ class Pimpinan extends CI_Controller {
         $this->load->view('pimpinan/lihatDonasi',$data);
         $this->load->view('template/foot');
     }
+
+    function laporan_pdf(){
+
+        $data['data'] = $this->ModelDonasi->get()->result();
+
+        $this->load->library('pdf');
+    
+        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->filename = "laporan.pdf";
+        $this->pdf->load_view('pimpinan/laporan', $data);
+    }
 }
