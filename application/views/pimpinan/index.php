@@ -12,7 +12,7 @@ $jml_zakat = $zakat->jml_mal + $zakat->jml_profesi;
       <div class="row">
           <div class="col-md">
             <br>
-            <div class="alert alert-warning"><marquee>Selamat Datang <?php echo $this->session->userdata('user') ?></marquee></div>
+            <div class="alert alert-warning"><marquee> <span class="text-white">Selamat Datang <?php echo $this->session->userdata('user') ?> </span></marquee></div>
           </div>
       </div>
 

@@ -13,7 +13,7 @@
 		    <a class="nav-link" href="<?php echo base_url('pimpinan/lihatDonasi') ?>">Lihat Donasi</a>
 		  </li>
 		  <li class="nav-item">
-		    <a class="nav-link" href="#">Lihat Laporan</a>
+		    <a class="nav-link" href="<?php echo base_url('pimpinan/lihatLaporan') ?>">Lihat Laporan</a>
 		  </li>
 		  <li class="nav-item">
 		    <a class="nav-link" href="<?php echo base_url('welcome/logout')?> ">Keluar</a>

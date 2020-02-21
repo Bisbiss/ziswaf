@@ -8,7 +8,7 @@
                     <div class="card-header bg-info">
                         <h3 class="card-title" style="float:left">Kelola Donasi</h3>  
                         <h3 class="card-title" style="float:right"><a href="<?php echo base_url('pimpinan/laporan_pdf') ?>" data-target="#tambah">
-                        <i class="nav-icon fa fa-print"> Cetak Laporan</i></a></h3>  
+                        <i class="nav-icon fa fa-print"> Cetak Donasi</i></a></h3>  
                     </div>
 
                     <div class="card-body">

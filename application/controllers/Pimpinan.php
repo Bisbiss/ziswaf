@@ -6,6 +6,7 @@ class Pimpinan extends CI_Controller {
         parent::__construct();
         $this->load->helper('url');
         $this->load->model('ModelDonasi');
+        $this->load->model('ModelLaporan');
         $this->load->library('session');
         if ($this->session->userdata('status')!='pimpinan') {
             redirect('welcome');
@@ -24,6 +25,14 @@ class Pimpinan extends CI_Controller {
         $this->load->view('template/head');
         $this->load->view('pimpinan/menu');
         $this->load->view('pimpinan/lihatDonasi',$data);
+        $this->load->view('template/foot');
+    }
+
+    function lihatLaporan(){
+        $data['data'] = $this->ModelLaporan->get()->result();
+        $this->load->view('template/head');
+        $this->load->view('pimpinan/menu');
+        $this->load->view('pimpinan/lihatLaporan',$data);
         $this->load->view('template/foot');
     }
 
