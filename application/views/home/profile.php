@@ -27,16 +27,20 @@
                     <div class="row">
                         <div class="col-sm-6 border-right">
                             <div class="description-block">
-                            <h5 class="description-header"><?php echo "Rp ".number_format($jml_zakat,2,',','.'); ?></h5>
                             <span class="description-text">TOTAL ZAKAT</span>
+                            <h5 class="description-header"><?php echo "Rp ".number_format($jml_zakat,2,',','.'); ?></h5>
+                            <br>
+                            <a href="">Riwayat Zakat</a>
                             </div>
                             <!-- /.description-block -->
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6 border-right">
                             <div class="description-block">
+                            <span class="description-text">TOTAL DONASI</span> 
                             <h5 class="description-header"><?php echo "Rp ".number_format($jml_donasi,2,',','.'); ?></h5>
-                            <span class="description-text">TOTAL DONASI</span>
+                            <br>
+                            <a href="">Riwayat Donasi</a>
                             </div>
                             <!-- /.description-block -->
                         </div>

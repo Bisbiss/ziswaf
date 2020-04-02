@@ -18,27 +18,19 @@
                         <h5 class="text-center">Pilih Metode Pembayaran :</h5>
                         <hr>
                         <div class="row">
-                            <div class="col-md-4 outer">
+                            <div class="col-md-6 outer">
                                 <div class="callout callout-info">
                                     <center>
                                     <h4>GOPAY</h4>
-                                    <img src="<?php echo base_url("assets/dist/img/gopay.jpeg")?>" height="250px" class="bayar">
+                                    <img src="<?php echo base_url("assets/dist/img/gopay.jpeg")?>" class="img-fluid">
                                     </center>
                                 </div>
                             </div>
-                            <div class="col-md-4 outer">
-                                <div class="callout callout bayar">
+                            <div class="col-md-6 outer">
+                                <div class="callout callout">
                                     <center>
                                     <h4>OVO</h4>
-                                    <img src="<?php echo base_url("assets/dist/img/ovo.jpeg")?>" height="250px" class="bayar">
-                                    </center>
-                                </div>
-                            </div>
-                            <div class="col-md-4 outer">
-                                <div class="callout callout-danger bayar">
-                                    <center>
-                                    <h4>Transfer BANK</h4>
-                                    <img src="<?php echo base_url("assets/dist/img/bank_transfer.png")?>" class="bayar" height="250px">
+                                    <img src="<?php echo base_url("assets/dist/img/ovo.jpeg")?>" class="img-fluid">
                                     </center>
                                 </div>
                             </div>
