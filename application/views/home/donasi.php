@@ -60,21 +60,35 @@
             <div class="col-md-4">
             <br>
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-primary">
                         <h5 class="card-tittle">Kalkulator Zakat</h5>
                     </div>
                     <div class="card-body">
-                        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, animi nihil? Rerum provident facere cupiditate reiciendis atque officiis, fugiat cumque veniam ipsum omnis voluptates a exercitationem quasi voluptatem recusandae perferendis?</span>
-                        <div class="table">
-                            <tr>
-                                <td>Jumlah Harta</td>
-                                <td><input type="text" class="harta"></td>
-                            </tr>
-                            <tr>
-                                <td>Jumlah Zakat</td>
-                                <td><input type="text" value=0 class="jml_zakat"></td>
-                            </tr>
-                        </div>
+                        <p>Nisab untuk zakat mal adalah harta yang disimpan selama 1 tahun setara nilainya dengan 85 gram Emas</p>
+                        <form>
+                            <div class="form-group">
+                                <label>Jumlah Harta</label>
+                                <input type="number" class="form-control" id="mal">
+                                <button class="btn btn-info form-control" min=0 onclick="hitungMal()" type="button">Hitung</button>
+                            </div>
+                            <div class="form-group">
+                                <label>Zakat Mal</label>
+                                <input type="text" class="form-control" id="zmal" value="0" readonly>
+                            </div>
+                        </form>
+                        <hr>
+                        <p>Nisab untuk zakat profesi adalah pendapatan selama 1 tahun setara nilainya dengan 522 KG Emas</p>
+                        <form>
+                            <div class="form-group">
+                                <label>Jumlah Pendapatan</label>
+                                <input type="number" class="form-control" min=0 id="profesi">
+                                <button class="btn btn-info form-control" onclick="hitungProfesi()" type="button">Hitung</button>
+                            </div>
+                            <div class="form-group">
+                                <label>Zakat Profesi</label>
+                                <input type="text" class="form-control" id="zprof" value="0" readonly>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -84,7 +98,30 @@
 </section>
 
 <script>
-document.getElemenByClass('harta'){
+function hitungMal(){
+    let hartaMal = parseInt(document.getElementById("mal").value);
+    let zakatMal;
+    let hargaEmas = 700000;
     
+    if (hartaMal >= (hargaEmas*85)) {
+        zakatMal = hartaMal*(2.5/100);
+    } else {
+        zakatMal = 'Tidak memenuhi minimum satu nisab';
+    }
+    // console.log(zakatMal);
+    zmal.value = zakatMal;
+}
+
+function hitungProfesi(){
+    let hartaProfesi = parseInt(document.getElementById("profesi").value);
+    let zakatProfesi;
+    let hargaBeras = 9000;
+    
+    if (hartaProfesi >= (hargaBeras*522)) {
+        zakatProfesi = hartaProfesi*(2.5/100);
+    } else {
+        zakatProfesi = 'Tidak memenuhi minimum satu nisab';
+    }
+    zprof.value = zakatProfesi;
 }
 </script>
