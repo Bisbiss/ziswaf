@@ -47,6 +47,14 @@ class Home extends CI_Controller {
 		$this->load->view('template/foot');
 	}
 
+	function laporan_detail($id){
+		$item['item'] = $this->ModelLaporan->get_where($id)->result();
+		$this->load->view('template/head');
+		$this->load->view('home/menu');
+		$this->load->view('home/detail_laporan', $item);
+		$this->load->view('template/foot');
+	}
+
 	function donasi(){
 		$username = $this->session->userdata('user');
 		$data['data'] = $this->ModelAkun->get_where($username)->result();

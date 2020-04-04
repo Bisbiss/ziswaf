@@ -30,7 +30,7 @@
                             <span class="description-text">TOTAL ZAKAT</span>
                             <h5 class="description-header"><?php echo "Rp ".number_format($jml_zakat,2,',','.'); ?></h5>
                             <br>
-                            <a href="">Riwayat Zakat</a>
+                            <!-- <a href="">Riwayat Zakat</a> -->
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -40,7 +40,7 @@
                             <span class="description-text">TOTAL DONASI</span> 
                             <h5 class="description-header"><?php echo "Rp ".number_format($jml_donasi,2,',','.'); ?></h5>
                             <br>
-                            <a href="">Riwayat Donasi</a>
+                            <!-- <a href="#" data-target="<?php echo '#riwayat'.$data->email ?>" data-toggle="modal">Riwayat Donasi</a> -->
                             </div>
                             <!-- /.description-block -->
                         </div>
@@ -63,9 +63,20 @@
                 </div>
                 <!-- /.widget-user -->
             </div>
-            <?php } ?>
+        <div class="modal fade" id="<?php echo 'riwayat'.$data->email ?>"  role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary">
+                        <h4 class="modal-title">Riwayat Donasi</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
         </div>
       </div>
     </div>
 </section>
-

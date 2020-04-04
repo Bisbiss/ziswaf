@@ -27,7 +27,7 @@
                                 <img src="<?php echo base_url('assets/laporan/'.$laporan->foto)?>" alt="Product Image" class="img-size-100">
                                 </div>
                                 <div class="product-info">
-                                <span class="product-title"><?php echo $laporan->judul ?> </span>
+                                <a href="<?php echo base_url('Home/laporan_detail/'.$laporan->id_laporan)?>"><span class="product-title"><?php echo $laporan->judul ?> </span></a>
                                     <span class="badge badge-warning float-right"><?php echo $laporan->jumlah ?></span>
                                 <span class="product-description">
                                     <span><?php echo $laporan->isi ?></span>

@@ -3,7 +3,7 @@
       <div class="container">
         <!-- Pesan Selamat Datang -->
         <div class="row">
-            <div class="col-md">
+            <div class="col-md-8">
             <br>
                 <div class="card">
                     <div class="card-header">
@@ -49,14 +49,42 @@
                                 <input type="text" class="form-control" name="lainya" id="lainya" placeholder="Masukan Donasi Tambahan">
                             </div>
                             <div class="form-grup">
-                                <input type="submit" class="btn btn-info" style="float:right" value="Submit">
+                                <input type="submit" class="btn btn-info form-control" value="Submit">
                             </div>
                         </form>
                     </div>
                     <?php } ?>
                 </div>
             </div>
+
+            <div class="col-md-4">
+            <br>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-tittle">Kalkulator Zakat</h5>
+                    </div>
+                    <div class="card-body">
+                        <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem, animi nihil? Rerum provident facere cupiditate reiciendis atque officiis, fugiat cumque veniam ipsum omnis voluptates a exercitationem quasi voluptatem recusandae perferendis?</span>
+                        <div class="table">
+                            <tr>
+                                <td>Jumlah Harta</td>
+                                <td><input type="text" class="harta"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah Zakat</td>
+                                <td><input type="text" value=0 class="jml_zakat"></td>
+                            </tr>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
        </div>
     </div>
 </section>
+
+<script>
+document.getElemenByClass('harta'){
+    
+}
+</script>
