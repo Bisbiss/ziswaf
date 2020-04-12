@@ -19,32 +19,20 @@
                 </div>
                 <div class="card-footer">
                 <?php 
-                $dana = $this->db->query("SELECT SUM(zakat_mal) AS jml_mal,SUM(zakat_profesi) AS jml_profesi FROM donasi WHERE email = '$data->email' && verifikasi=1")->row(); 
+                $dana = $this->db->query("SELECT SUM(zakat_mal) AS jml_mal,SUM(zakat_profesi) AS jml_profesi,SUM(infak) AS jml_infak,SUM(sedekah) AS jml_sedekah,SUM(wakaf) AS jml_wakaf FROM donasi WHERE email = '$data->email' && verifikasi=1")->row(); 
                 $jml_zakat = $dana->jml_mal + $dana->jml_profesi;
-                $donasi = $this->db->query("SELECT SUM(infak) AS jml_infak,SUM(sedekah) AS jml_sedekah,SUM(wakaf) AS jml_wakaf FROM donasi WHERE email = '$data->email' && verifikasi=1")->row(); 
-                $jml_donasi = $donasi->jml_infak + $donasi->jml_sedekah;
                 ?>
                     <div class="row">
-                        <div class="col-sm-6 border-right">
+                        <div class="col-sm border-right">
                             <div class="description-block">
-                            <span class="description-text">TOTAL ZAKAT</span>
+                            <span class="description-text">TOTAL ZISWAF</span>
                             <h5 class="description-header"><?php echo "Rp ".number_format($jml_zakat,2,',','.'); ?></h5>
                             <br>
                             <!-- <a href="">Riwayat Zakat</a> -->
                             </div>
                             <!-- /.description-block -->
                         </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6 border-right">
-                            <div class="description-block">
-                            <span class="description-text">TOTAL DONASI</span> 
-                            <h5 class="description-header"><?php echo "Rp ".number_format($jml_donasi,2,',','.'); ?></h5>
-                            <br>
-                            <!-- <a href="#" data-target="<?php echo '#riwayat'.$data->email ?>" data-toggle="modal">Riwayat Donasi</a> -->
-                            </div>
-                            <!-- /.description-block -->
-                        </div>
-                        </div>
+                    </div>
                     <!-- /.row -->
                     <!-- row -->
                     <div class="row">

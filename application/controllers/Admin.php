@@ -76,15 +76,26 @@ class Admin extends CI_Controller {
         }
     }
 
+    function data_akun($username){
+        $data['data'] = $this->ModelAkun->get_where($username)->row();
+        // var_dump($data);
+        $this->load->view('template/head');
+        $this->load->view('admin/menu');
+        $this->load->view('admin/ubah_akun',$data);
+        $this->load->view('template/foot');
+    }
+
     function ubah_akun(){
         $email = $_POST['email'];
 		$username = $_POST['username'];
-		$pass = $_POST['pass'];
+        $pass = $_POST['pass'];
+        $level = $_POST['level'];
 
 		$data = array(
 			'email' => $email,
 			'username' =>$username,
-            'pass' => md5($pass)
+            'pass' => md5($pass),
+            'level' => $level
         );
         $ubah = $this->ModelAkun->ubah($data,$email);
         if ($ubah) {
