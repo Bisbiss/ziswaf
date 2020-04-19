@@ -7,7 +7,7 @@
 
 	  	<ul class="nav justify-content-end">
 		  <li class="nav-item">
-		    <a class="nav-link" href="<?php echo base_url('home/donasi') ?>">Donasi</a>
+		    <a class="nav-link" href="<?php echo base_url('home/donasi') ?>">ZISWAF</a>
 		  </li>
 		  <li class="nav-item">
 		    <a class="nav-link" href="<?php echo base_url('home/laporan') ?>">Laporan</a>

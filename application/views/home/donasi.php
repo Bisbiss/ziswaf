@@ -6,11 +6,17 @@
             <div class="col-md-8">
             <br>
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-info">
                         <h3 class="card-title">Formulir Donasi</h3>
                     </div>
                     <?php foreach($data as $data){ ?>
                     <div class="card-body">
+                        <center>
+                        <span>Hanya menerima zakat, infak, sedekah dan wakaf (ZISWAF) berupa Uang. <br>
+                        untuk zakat, infak, sedekah dan wakaf (ZISWAF) selain uang bisa mengisi kolom isian Lainya <br>
+                        Terimakasih</span>
+                        </center>
+                        <hr>
                         <form role="form" action="<?php echo base_url('home/submit_donasi'); ?>" method="post">
                             <div class="form-group">
                                 <label for="nama">Username</label>

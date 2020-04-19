@@ -31,6 +31,11 @@ class ModelDonasi extends CI_Model{
         $this->db->order_by('id_donasi', 'DESC');
         return $this->db->get('donasi');
     }
+    function where($email){
+        $this->db->where('email',$email);
+        $this->db->order_by('id_donasi', 'DESC');
+        return $this->db->get('donasi');
+    }
     function verifikasi($id_donasi){
         $this->db->set('verifikasi',1);
         $this->db->where('id_donasi',$id_donasi);
