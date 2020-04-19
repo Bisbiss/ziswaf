@@ -73,22 +73,29 @@ class Home extends CI_Controller {
 		$sedekah = $_POST['sedekah'];
 		$wakaf = $_POST['wakaf'];
 		$lainya = $_POST['lainya'];
-		$data = array(
-			'nama' => $name,
-			'email' => $email,
-			'zakat_mal' => $zakat_mal,
-			'zakat_profesi' => $zakat_profesi,
-			'infak' => $infak,
-			'wakaf' => $wakaf,
-			'sedekah' => $sedekah,
-			'lainya' => $lainya,
-			'waktu' => date('Y-m-d')
-		);
-		$tambah = $this->ModelDonasi->tambah($data);
-		if (!$tambah) {
-			echo "Data Gagal Ditambahkan";
-		} else {
-			redirect(base_url('home/donasi_done'));
+		if ($zakat_mal+$zakat_profesi+$infak+$sedekah+$wakaf < 1) {
+			echo "<script language='javascript'>
+				window.alert('Data ZISWAF yang anda masukan kosong');
+				window.location.href='../home/donasi';
+                </script>";
+		} else {		
+			$data = array(
+				'nama' => $name,
+				'email' => $email,
+				'zakat_mal' => $zakat_mal,
+				'zakat_profesi' => $zakat_profesi,
+				'infak' => $infak,
+				'wakaf' => $wakaf,
+				'sedekah' => $sedekah,
+				'lainya' => $lainya,
+				'waktu' => date('Y-m-d')
+			);
+			$tambah = $this->ModelDonasi->tambah($data);
+			if (!$tambah) {
+				echo "Data Gagal Ditambahkan";
+			} else {
+				redirect(base_url('home/donasi_done'));
+			}
 		}
 	}
 	function donasi_done(){
@@ -97,11 +104,18 @@ class Home extends CI_Controller {
 		// var_dump($akun);
 		// echo $akun->email;
 		$data['data'] = $this->ModelDonasi->where($akun->email)->row();
-		// var_dump($data);
-		$this->load->view('template/head');
-		$this->load->view('home/menu');
-		$this->load->view('home/donasi_done',$data);
-		$this->load->view('template/foot');
+		var_dump($data);
+		if ($data['data'] == null) {
+			echo "<script language='javascript'>
+				window.alert('Data tagihan ZISWAF anda kosong');
+				window.location.href='../home';
+                </script>";
+		} else {
+			$this->load->view('template/head');
+			$this->load->view('home/menu');
+			$this->load->view('home/donasi_done',$data);
+			$this->load->view('template/foot');
+		}
 	}
 	function bantuan(){
 		$this->load->view('template/head');
