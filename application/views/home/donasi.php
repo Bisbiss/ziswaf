@@ -70,6 +70,7 @@
                         <h5 class="card-tittle">Kalkulator Zakat</h5>
                     </div>
                     <div class="card-body">
+                        <h5>Zakat Mal</h5>
                         <p>Nisab untuk zakat mal adalah harta yang disimpan selama 1 tahun setara nilainya dengan 85 gram Emas</p>
                         <form>
                             <div class="form-group">
@@ -83,6 +84,7 @@
                             </div>
                         </form>
                         <hr>
+                        <h5>Zakat Profesi</h5>
                         <p>Nisab untuk zakat profesi adalah pendapatan selama 1 tahun setara nilainya dengan 522 KG Emas</p>
                         <form>
                             <div class="form-group">
