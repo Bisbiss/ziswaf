@@ -17,14 +17,15 @@
               <div class="small-box bg-success">
                 <div class="inner">
                   <h3><?php echo $donasi ?></h3>
-
                   <p>Kelola Donasi</p>
                 </div>
-                <div class="icon">
-                  <i class="fa fa-money"></i>
-                </div>
+                <a href="<?php echo base_url('admin/donasi')?>">
+                  <div class="icon">
+                    <i class="fa fa-money"></i>
+                  </div>
+                </a>
                 <a href="<?php echo base_url('admin/donasi')?>" class="small-box-footer">
-                  More info <i class="fa fa-arrow-circle-right"></i>
+                  Selengkapnya <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>
           </div>
@@ -37,14 +38,15 @@
               <div class="small-box bg-info">
                 <div class="inner">
                   <h3><?php echo $agenda ?></h3>
-
                   <p>Kelola Agenda</p>
                 </div>
-                <div class="icon">
-                  <i class="fa fa-list"></i>
-                </div>
+                <a href="<?php echo base_url('admin/agenda')?>">
+                  <div class="icon">
+                    <i class="fa fa-list"></i>
+                  </div>
+                </a>
                 <a href="<?php echo base_url('admin/agenda')?>" class="small-box-footer">
-                  More info <i class="fa fa-arrow-circle-right"></i>
+                  Selengkapnya <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>
           </div>
@@ -56,14 +58,15 @@
               <div class="small-box bg-warning">
                 <div class="inner">
                   <h3><?php echo $laporan ?></h3>
-
                   <p>Kelola Laporan</p>
                 </div>
-                <div class="icon">
-                  <i class="fa fa-folder-open"></i>
-                </div>
+                <a href="<?php echo base_url('admin/laporan')?>">
+                  <div class="icon">
+                    <i class="fa fa-folder-open"></i>
+                  </div>
+                </a>
                 <a href="<?php echo base_url('admin/laporan')?>" class="small-box-footer">
-                  More info <i class="fa fa-arrow-circle-right"></i>
+                    Selengkapnya <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>
           </div>
@@ -76,14 +79,15 @@
               <div class="small-box bg-danger">
                 <div class="inner">
                   <h3><?php echo $akun ?></h3>
-
                   <p>Kelola Akun</p>
                 </div>
-                <div class="icon">
-                  <i class="fa fa-users"></i>
-                </div>
+                <a href="<?php echo base_url('admin/akun')?>">
+                  <div class="icon">
+                    <i class="fa fa-users"></i>
+                  </div>
+                </a>
                 <a href="<?php echo base_url('admin/akun')?>" class="small-box-footer">
-                  More info <i class="fa fa-arrow-circle-right"></i>
+                    Selengkapnya <i class="fa fa-arrow-circle-right"></i>
                 </a>
               </div>
           </div>
