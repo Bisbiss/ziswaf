@@ -41,7 +41,6 @@ class Pimpinan extends CI_Controller {
         $data['data'] = $this->ModelDonasi->get()->result();
 
         $this->load->library('pdf');
-    
         $this->pdf->setPaper('A4', 'potrait');
         $this->pdf->filename = "laporan.pdf";
         $this->pdf->load_view('pimpinan/laporan', $data);
