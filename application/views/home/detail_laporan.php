@@ -14,7 +14,7 @@
 
                     <div class="card-body">
                         <center>
-                        <img src="<?php echo base_url('assets/laporan/'.$data->foto) ?>">
+                        <img src="<?php echo base_url('assets/laporan/'.$data->foto) ?>" class="img-fluid">
                         </center>
                         <p><?php echo $data->isi ?></p>
                     </div>
