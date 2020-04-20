@@ -20,11 +20,12 @@ class Laporan extends CI_Controller{
     function tambah(){
         $judul = $_POST['judul'];
         $isi = $_POST['isi'];
+        $jumlah = $_POST['jumlah'];
         $data_file = $_FILES['foto'];
         $config['upload_path'] = './assets/laporan';
         $config['allowed_types']='jpg|png|gif|jpeg';
         $this->load->library('upload',$config);
-        if(!$this->upload->do_upload('file')){
+        if(!$this->upload->do_upload('foto')){
             die("Gagal Upload File");
         }else{
             $file=$this->upload->data('file_name');
@@ -32,9 +33,11 @@ class Laporan extends CI_Controller{
         $data = array(
             'judul' => $judul,
             'isi' => $isi,
+            'jumlah' => $jumlah,
             'foto' => $data_file['name'],
             'waktu' => date('Y-m-d')
         );
+        // var_dump($data_file);
         $proses = $this->ModelLaporan->tambah($data);
         if ($proses) {
             echo "<script language='javascript'>

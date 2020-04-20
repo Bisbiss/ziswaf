@@ -15,9 +15,10 @@
                         <table id="example1" class="table table-bordered table-striped table-responsive">
                             <thead>
                                 <th width="5%">No</th>
-                                <th width="25%">Judul</th>
+                                <th width="20%">Judul</th>
                                 <th width="40%">Isi</th>
-                                <th width="15%">File</th>
+                                <th width="10%">Jumlah Uang</th>
+                                <th width="10%">File</th>
                                 <th width="15">Kelola</th>
                             </thead>
 
@@ -36,6 +37,9 @@
                                     </td>
                                     <td>
                                         <?php echo $data->isi ?>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-danger"><?php echo $data->jumlah ?></span>
                                     </td>
                                     <td>
                                         <a href="<?php echo base_url('assets/laporan/'.$data->foto) ?>">Lihat file </a>
@@ -61,7 +65,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-warning">
-                    <h4 class="modal-title">Tambah Agenda</h4>
+                    <h4 class="modal-title">Tambah Laporan</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <?php echo form_open_multipart('laporan/tambah'); ?>
@@ -71,6 +75,13 @@
                         <label class="control-label col-sm" for="tipe">Judul Laporan</label>
                         <div class="col-sm">
                             <input type="text" name="judul" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm" for="tipe">Jumlah Uang</label>
+                        <div class="col-sm">
+                            <input type="number" name="jumlah" class="form-control">
                         </div>
                     </div>
 
