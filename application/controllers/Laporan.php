@@ -60,19 +60,9 @@ class Laporan extends CI_Controller{
         $judul = $_POST['judul'];
         $id_laporan = $_POST['id_laporan'];
         $isi = $_POST['isi'];
-        $data_file = $_FILES['file'];
-        $config['upload_path'] = './assets/laporan';
-        $config['allowed_types']='jpg|png|gif|jpeg';
-        $this->load->library('upload',$config);
-        if(!$this->upload->do_upload('file')){
-            echo "gagal";
-        }else{
-            $file=$this->upload->data('file_name');
-        }
         $data = array(
             'judul' => $judul,
             'isi' => $isi,
-            'foto' => $data_file['name'],
             'waktu' => date('Y-m-d')
         );
 

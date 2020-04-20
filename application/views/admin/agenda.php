@@ -38,7 +38,8 @@
                                         <?php echo $data->isi ?>
                                     </td>
                                     <td>
-                                        <a href="<?php echo base_url('assets/agenda/'.$data->foto) ?>">Lihat file </a>
+                                        <a href="<?php echo base_url('assets/agenda/'.$data->foto) ?>"><i class="fa fa-file-image-o"> Lihat file </i></a>
+                                        <!-- <br><a href=""><i class="fa fa-edit"> Ubah File</i></a> -->
                                     </td>
                                     <td>
                                         <a href="<?php echo base_url('agenda/ubah/'.$data->id_agenda) ?>" ><i class="fa fa-edit"></i>Ubah</a>
@@ -59,42 +60,42 @@
 
 </section>
 
-    <!-- Tambah Data -->
-    <div class="modal fade" id="tambah"  role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header bg-primary">
-                    <h4 class="modal-title">Tambah Agenda</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <?php echo form_open_multipart('agenda/tambah'); ?>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="control-label col-sm" for="tipe">Judul Agenda</label>
-                        <div class="col-sm">
-                            <input type="text" name="judul" class="form-control" required>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-sm" for="tipe">Isi Agenda</label>
-                        <div class="col-sm">
-                            <textarea name="isi" class="form-control" cols="30" rows="7" required></textarea>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="control-label col-sm" for="path">File</label>
-                        <div class="col-sm">
-                            <input type="file" name="file" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                    
-                <div class="modal-footer">
-                    <input type ="submit" name ="submit" class="btn btn-primary" value="Submit"/>
-                </div>  
-                <?php form_close(); ?>
+<!-- Tambah Data -->
+<div class="modal fade" id="tambah"  role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary">
+                <h4 class="modal-title">Tambah Agenda</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
+            <?php echo form_open_multipart('agenda/tambah'); ?>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="control-label col-sm" for="tipe">Judul Agenda</label>
+                    <div class="col-sm">
+                        <input type="text" name="judul" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm" for="tipe">Isi Agenda</label>
+                    <div class="col-sm">
+                        <textarea name="isi" class="form-control" cols="30" rows="7" required></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="control-label col-sm" for="path">File</label>
+                    <div class="col-sm">
+                        <input type="file" name="file" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="modal-footer">
+                <input type ="submit" name ="submit" class="btn btn-primary" value="Submit"/>
+            </div>  
+            <?php form_close(); ?>
         </div>
     </div>
+</div>

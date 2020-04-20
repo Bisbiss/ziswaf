@@ -24,13 +24,6 @@
                                 <textarea name="isi" class="form-control" cols="30" rows="7" required><?php echo $isi ?></textarea>
                             </div>
                         </div>
-                        
-                        <div class="form-group">
-                            <label class="control-label col-sm" for="path">File</label>
-                            <div class="col-sm">
-                                <input type="file" name="file" class="form-control" value="<?php echo $foto ?>">
-                            </div>
-                        </div>
                     </div>
                         
                     <div class="card-footer">
