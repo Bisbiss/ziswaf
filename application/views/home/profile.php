@@ -20,7 +20,7 @@
                 <div class="card-footer">
                 <?php 
                 $dana = $this->db->query("SELECT SUM(zakat_mal) AS jml_mal,SUM(zakat_profesi) AS jml_profesi,SUM(infak) AS jml_infak,SUM(sedekah) AS jml_sedekah,SUM(wakaf) AS jml_wakaf FROM donasi WHERE email = '$data->email' && verifikasi=1")->row(); 
-                $jml_zakat = $dana->jml_mal + $dana->jml_profesi;
+                $jml_zakat = $dana->jml_mal + $dana->jml_profesi + $dana->jml_infak + $dana->jml_sedekah + $dana->jml_wakaf;
                 ?>
                     <div class="row">
                         <div class="col-sm border-right">

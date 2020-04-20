@@ -1,8 +1,8 @@
 <?php
 $jml_user = $this->db->query('SELECT COUNT(email) as jml FROM user where level=1')->row();
-$zakat = $this->db->query('SELECT SUM(zakat_mal) AS jml_mal,SUM(zakat_profesi) AS jml_profesi FROM donasi where verifikasi=1')->row();
 $jml = $this->db->query('SELECT COUNT(id_agenda) as jml_agenda FROM agenda')->row();
-$jml_zakat = $zakat->jml_mal + $zakat->jml_profesi;
+$dana = $this->db->query("SELECT SUM(zakat_mal) AS jml_mal,SUM(zakat_profesi) AS jml_profesi, SUM(infak) AS jml_infak, SUM(sedekah) AS jml_sedekah, SUM(wakaf) AS jml_wakaf FROM donasi WHERE verifikasi=1")->row(); 
+$jml_zakat = $dana->jml_mal + $dana->jml_profesi + $dana->jml_infak + $dana->jml_sedekah + $dana->jml_wakaf;
 ?>
 <!-- <div class="content-wrapper"> -->
 <section class="content">
@@ -55,7 +55,7 @@ $jml_zakat = $zakat->jml_mal + $zakat->jml_profesi;
               </div>
               <div class="col-md-4">
                 <h3 class="text-center text-primary"><b><?php echo "Rp ".number_format($jml_zakat,2,',','.'); ?></b></h3>
-                <h5 class="text-center text-grey" style="margin-top:-10px;"><b>JUMLAH ZAKAT</b></h5>
+                <h5 class="text-center text-grey" style="margin-top:-10px;"><b>JUMLAH ZISWAF</b></h5>
               </div>
               <div class="col-md-4">
                 <h3 class="text-center text-primary"><b><?php echo $jml->jml_agenda ?></b></h3>

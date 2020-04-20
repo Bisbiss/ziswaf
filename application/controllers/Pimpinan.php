@@ -42,6 +42,15 @@ class Pimpinan extends CI_Controller {
         $this->load->library('pdf');
         $this->pdf->setPaper('A4', 'landscape');
         $this->pdf->load_view('pimpinan/laporan', $data);
+        $this->pdf->filename = "ziswaf.pdf";
+    }
+
+    function laporan(){
+        $data['data'] = $this->ModelLaporan->get()->result();
+
+        $this->load->library('pdf');
+        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->load_view('pimpinan/laporan_saldo', $data);
         $this->pdf->filename = "laporan.pdf";
     }
 }
