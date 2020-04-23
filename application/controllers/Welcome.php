@@ -25,21 +25,28 @@ class Welcome extends CI_Controller {
 	}
 	public function daftarAkun()
 	{
-		$email = $_POST['email'];
 		$username = $_POST['username'];
-		$pass = $_POST['pass'];
-
-		$data = array(
-			'email' => $email,
-			'username' =>$username,
-			'pass' => md5($pass));
-
-		$cek = $this->ModelAkun->cek($username,$email)->num_rows();
-		if($cek > 0){
-			redirect('welcome/daftar?pesan=gagal');
+		if(stristr($username," ")){
+			die("<script language='javascript'>
+			window.alert('Masukan username hanya berisi huruf tanpa spasi');
+			window.location.href='daftar';
+			</script>");
 		}else{
-			$daftar = $this->ModelAkun->daftarAkun($data);
-			redirect('welcome/index?pesan=dibuat');			
+			$email = $_POST['email'];
+			$pass = $_POST['pass'];
+
+			$data = array(
+				'email' => $email,
+				'username' =>$username,
+				'pass' => md5($pass));
+
+			$cek = $this->ModelAkun->cek($username,$email)->num_rows();
+			if($cek > 0){
+				redirect('welcome/daftar?pesan=gagal');
+			}else{
+				$daftar = $this->ModelAkun->daftarAkun($data);
+				redirect('welcome/index?pesan=dibuat');			
+			}
 		}
 	}
 

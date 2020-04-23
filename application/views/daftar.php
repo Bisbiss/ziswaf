@@ -29,8 +29,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <form role="form" action="<?php echo base_url('welcome/daftarAkun'); ?>" method="post">
         <div class="card-body">
           <div class="form-group">
-            <label for="exampleInputPassword2">Username</label>
-            <input type="text" class="form-control" name="username" required id="exampleInputPassword2" maxvalue=25 placeholder="Masukan Username">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" required id="username" maxvalue=25 placeholder="Masukan Username">
           </div>
           <div class="form-group">
             <label for="inputUsername">Email</label>
